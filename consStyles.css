@@ -67,11 +67,13 @@ h3 {
     font-size: 1.5rem;
     font-weight: 1;
     padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 h4 {
     font-size: 1.3rem;
     padding-bottom: 2rem;
+    padding-top: .5rem;
 }
 
 p {
@@ -124,8 +126,10 @@ nav {
 }
 
 header .logo {
-    width: 20rem;
-    height: auto;
+    width: 20vw; /* Logo width adjusts to 20% of the viewport width */
+    max-width: 300px; /* Set a maximum size to avoid excessive growth */
+    min-width: 180px; /* Set a minimum size to maintain readability */
+    height: auto; /* Maintain aspect ratio */
 }
 
 /* Banner Section */
@@ -148,10 +152,25 @@ header .logo {
 }
 
 .about p {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: left;
+    max-width: 800px; /* Restrict the paragraph width */
+    margin: 0 auto; /* Center the paragraph */
+    text-align: left; /* Align text to the left */
+    line-height: 1.6; /* Improve readability */
+    padding: 0 20px; /* Add horizontal padding for spacing */
 }
+
+.about ul {
+    max-width: 800px; /* Match the paragraph width */
+    margin: 0 auto; /* Center the list */
+    padding-top: 20px;
+    padding-left: 100px; /* Add left padding for indentation */
+    text-align: left; /* Align text to the left */
+}
+
+.about ul li {
+    margin-bottom: 10px; /* Add spacing between bullet points */
+}
+
 
 /* Korey Image Section */
 .korey {
@@ -167,27 +186,46 @@ header .logo {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
 }
 
-/* Testimonials Section */
-.testimonials {
+/* Hours */
+.hours {
+    text-align: center; /* Center all content */
+    padding: 2rem; /* Add space around the section */
+    color: var(--text-color);
     padding: 2rem;
     background-color: var(--light-bg);
     color: var(--text-color);
 }
 
-.testimonial {
+.hours-container {
     background-color: var(--dark-bg);
     margin: 1rem auto;
     padding: 1.5rem;
     max-width: 600px;
     border-radius: var(--border-radius);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    font-style: italic;
 }
 
-.testimonial p {
-    text-align: left;
-    margin: 0;
+.hours h2 {
+    font-size: 2rem; /* Adjust title size */
+    margin-bottom: 1.5rem; /* Add space below the title */
 }
+
+.hours-content {
+    font-size: 1.2rem; /* Adjust font size for readability */
+    line-height: 2; /* Space out the lines evenly */
+    max-width: 600px; /* Restrict width for better layout */
+    margin: 0 auto; /* Center the content */
+}
+
+.hours-content p {
+    margin: 0.8rem 0; /* Add vertical spacing between lines */
+}
+
+.hours-content strong {
+    color: var(--primary-color); /* Highlight the day name */
+    font-weight: 500; /* Use a thinner font weight for elegance */
+}
+
+
 
 /* Booking Section */
 .booking {
