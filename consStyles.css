@@ -18,7 +18,8 @@ body {
     background-color: var(--dark-bg);
     background-image: url('images/1.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: 100% 25%; /* Adjust to focus on the second quadrant */
+    background-attachment: fixed;
     background-attachment: fixed;
     background-repeat: no-repeat;
     color: var(--text-color);
@@ -85,10 +86,9 @@ p {
 
 /* Header */
 header {
-    background: linear-gradient(to bottom, 
-        var(--dark-bg) 5%, 
-        var(--light-bg) 50%, 
-        var(--dark-bg) 95%);
+    background: radial-gradient(circle,
+        var(--light-bg) 40%, 
+        var(--dark-bg) 100%);
     padding: 1rem 2rem;
     display: flex; /* Use Flexbox for the header */
     align-items: center; /* Vertically align items */
@@ -126,10 +126,8 @@ nav {
 }
 
 header .logo {
-    width: 20vw; /* Logo width adjusts to 20% of the viewport width */
-    max-width: 300px; /* Set a maximum size to avoid excessive growth */
-    min-width: 180px; /* Set a minimum size to maintain readability */
-    height: auto; /* Maintain aspect ratio */
+    width: 20rem;
+    height: auto;
 }
 
 /* Banner Section */
