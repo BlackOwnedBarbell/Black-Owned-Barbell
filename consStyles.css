@@ -169,6 +169,29 @@ header .logo {
     margin-bottom: 10px; /* Add spacing between bullet points */
 }
 
+.image-display {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust grid columns based on space */
+    gap: 1rem; /* Spacing between images */
+    margin: 2rem auto; /* Center the grid */
+    padding: 1rem;
+    max-width: 800px;
+}
+
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Optional: Add shadow */
+}
+
+.image-wrapper img {
+    width: 100%;
+    object-fit: cover; /* Ensure image covers the container */
+    object-position: center; /* Center the image */
+    display: block;
+}
+
 
 /* Korey Image Section */
 .korey {
