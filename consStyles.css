@@ -80,8 +80,6 @@ h4 {
 p {
     font-size: 1.1rem;
     text-align: center;
-    padding-bottom: 2rem;
-    padding-top: 1rem;
 }
 
 /* Header */
@@ -300,7 +298,6 @@ footer {
 .footer-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     color: var(--text-color);
     text-decoration: none;
 }
