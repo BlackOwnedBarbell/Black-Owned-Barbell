@@ -15,14 +15,30 @@
 </head>
 <body>
   <header>
-    <nav>
-      <a href="/consultations.html" class="Header-nav-item">BOOK YOUR FREE CONSULTATION</a>
-      <a href="/contact.html" class="Header-nav-item">CONTACT</a>
-      <div class="header-logo-container">
+    <div class="home-nav">
+      <nav>
         <a href="index.html">
           <img src="images/BOB logo.png" alt="Black Owned Barbell logo" class="logo">
         </a>
-      </div>
+        <button class="hamburger-menu" aria-label="Toggle navigation">
+          ☰
+        </button>
+        <ul class="nav-links">
+          <button class="close-menu" aria-label="Close navigation">✕</button>
+          <a href="/consultations.html" class="Header-nav-item">BOOK YOUR FREE CONSULTATION</a>
+          <a href="/contact.html" class="Header-nav-item">CONTACT</a>
+        </ul>
+      </nav>
+    </div>
+
+    <nav>
+        <a href="/consultations.html" class="Header-nav-item">BOOK YOUR FREE CONSULTATION</a>
+        <a href="/contact.html" class="Header-nav-item">CONTACT</a>
+        <div class="header-logo-container">
+          <a href="index.html">
+            <img src="images/BOB logo.png" alt="Black Owned Barbell logo" class="logo">
+          </a>
+    </div>
     </nav>
   </header>
 
@@ -53,12 +69,13 @@
             When you train with Black Owned Barbell, you’ll be coached on both the ‘how’ and the ‘why’ behind every training decision, 
             so that you become more in tune with your body and become the strongest version of yourself. 
             We will work together to create a training plan that is specifically tailored to you as an individual, 
-            as well as ensuring you are able to continue progressing even beyond your initial goals. 
-            Every movement we do has a purpose, empowering you to: 
-            <ul>  
-              <li>Build Muscle: Sculpt and strengthen your body.</li>
-              <li>Lose Fat: Achieve your ideal physique.</li>
-              <li>Live Pain-Free: Move confidently and comfortably.</li>
+            as well as ensuring you are able to continue progressing even beyond your initial goals.</p>
+            <p>Every movement we do has a purpose, empowering you to:</p>
+            <p>
+              <ul>  
+                <li>Build Muscle: Sculpt and strengthen your body.</li>
+                <li>Lose Fat: Achieve your ideal physique.</li>
+                <li>Live Pain-Free: Move confidently and comfortably.</li>
             </ul>
           </p>
           <hr>
@@ -126,5 +143,21 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.querySelector(".hamburger-menu");
+        const navLinks = document.querySelector(".nav-links");
+        const closeMenu = document.querySelector(".close-menu");
+
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("open");
+        });
+
+        closeMenu.addEventListener("click", () => {
+            navLinks.classList.remove("open");
+        });
+    });
+  </script>
+  
 </body>
 </html>

@@ -20,7 +20,6 @@ body {
     background-size: cover;
     background-position: 100% 25%; /* Adjust to focus on the second quadrant */
     background-attachment: fixed;
-    background-attachment: fixed;
     background-repeat: no-repeat;
     color: var(--text-color);
     line-height: 1.6;
@@ -37,6 +36,10 @@ body::before {
     background-color: rgba(0, 0, 0, 0.8); /* Black overlay with 70% opacity */
     z-index: 0; /* Ensure the overlay is below content */
     pointer-events: none; /* Allows content to be clickable */
+}
+
+.home-nav { 
+    display: none; /* Hide the hamburger menu by default */ 
 }
 
 main, header, footer, section, .korey {
@@ -82,14 +85,14 @@ p {
 
 /* Header */
 header {
-    background: radial-gradient(circle,
-        var(--light-bg) 40%, 
-        var(--dark-bg) 100%);
+    display: flex;
+    justify-content: space-between; /* Space out logo and menu */
+    align-items: center;
     padding: 1rem 2rem;
-    display: flex; /* Use Flexbox for the header */
-    align-items: center; /* Vertically align items */
-    justify-content: center; /* Center content horizontally */
-    position: relative; /* For logo centering */
+    height: 7rem; /* Consistent height */
+    background: radial-gradient(circle, var(--light-bg) 40%, var(--dark-bg) 100%);
+    position: relative;
+    z-index: 1000;
 }
 
 nav {
@@ -125,6 +128,18 @@ header .logo {
     height: auto;
 }
 
+.hamburger-menu {
+    display: none; /* Default hidden */
+    font-size: 2rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+    position: relative;
+    margin-left: auto; /* Push to the right */
+}
+
 /* Banner Section */
 .banner {
     width: 100%;
@@ -149,8 +164,6 @@ header .logo {
     margin: 0 auto;
     text-align: left;
 }
-
-
 
 .about ul {
     max-width: 800px; /* Match the paragraph width */
@@ -335,17 +348,102 @@ footer a:hover {
     }
 
     .header-logo-container {
-        order: -1; /* Ensure the logo is placed first */
-        margin-right: auto; /* Push the logo to the left */
+        position: relative; /* Remove absolute positioning */
+        left: auto;
+        transform: none;
+        flex: 0; /* Prevent stretching */
+        margin-right: auto; /* Push logo to the left */
+        order: -1;
     }
 }
 
+@media (max-width: 930px) {
+
+    header {
+        display: flex;
+        justify-content: space-between; /* Separate logo and hamburger menu */
+        align-items: center; /* Vertically align items */
+        padding: 1rem 2rem;
+        height: 7rem; /* Set consistent header height */
+    }
+
+    .header-logo-container {
+        flex: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; /* Align the logo to the left */
+        margin-right: auto; /* Push the logo to the left */
+    }
+
+    .hamburger-menu{
+        display: block; /* Ensure visibility */
+        font-size: 32px;
+        color: white;
+        background: none;
+        border: none;
+        margin-left: auto; /* Push hamburger menu to the far right */
+        position: relative;
+        z-index: 2; /* Ensure it's above content */
+    }
+
+    .hamburger-menu {
+        margin-left: auto; /* Push the hamburger menu to the far right */
+    }
+
+    .nav-links {
+        display: none; /* Hidden by default */
+        flex-direction: column; /* Stack links vertically */
+        align-items: center; /* Center horizontally */
+        justify-content: center; /* Center vertically */
+        background-color: rgba(0, 0, 0, 1); /* black background */
+        position: fixed; /* Cover the entire screen */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        z-index: 3; /* Ensure it's above everything */
+    }
+
+    .nav-links.open {
+        display: flex; /* Show the mobile menu */
+    }
+    
+    .close-menu {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 2rem;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        z-index: 1100; /* Ensure it's above the menu background */
+    }
+    
+    .close-menu:hover {
+        color: var(--accent-color); /* Optional hover effect */
+    }
+
+    header nav { 
+        display: none; /* Hide the desktop nav */ 
+    }
+
+    .home-nav, .home-nav nav {
+        display: flex; /* Show mobile nav */
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+
+
 @media (max-width: 768px) {
-    @media (max-width: 768px) {
         /* Adjust header */
         header {
             padding: 1rem; /* Reduce padding for smaller screens */
             flex-wrap: wrap; /* Allow items to wrap for better spacing */
+            justify-content: space-between;
         }
     
         header .logo {
@@ -410,15 +508,9 @@ footer a:hover {
             text-align: center; /* Center-align text */
         }
     
-        .footer-center a {
-            font-size: 2rem; /* Reduce icon size slightly */
-            margin: 0.5rem; /* Add spacing for accessibility */
-        }
-    
-        .footer-left,
-        .footer-right {
-            font-size: 0.9rem; /* Reduce text size for smaller screens */
-            margin-top: 0.5rem; /* Add some spacing */
+        .footer-center {
+            justify-content: center; /* Center items horizontally */
+            display: flex; /* Ensure it's using Flexbox */
+            flex-wrap: wrap; /* Allow wrapping if items overflow */
         }
     }
-}

@@ -15,14 +15,30 @@
 </head>
 <body>
   <header>
-    <nav>
-      <a href="/contact.html" class="Header-nav-item">CONTACT</a>
-      <div class="header-logo-container">
+    <div class="home-nav">
+      <nav>
         <a href="index.html">
           <img src="images/BOB logo.png" alt="Black Owned Barbell logo" class="logo">
         </a>
-      </div>
-      <a href="/consultations.html" class="Header-nav-item">BOOK YOUR FREE CONSULTATION</a>
+        <button class="hamburger-menu" aria-label="Toggle navigation">
+          ☰
+        </button>
+        <ul class="nav-links">
+          <button class="close-menu" aria-label="Close navigation">✕</button>
+          <a href="/consultations.html" class="Header-nav-item">BOOK YOUR FREE CONSULTATION</a>
+          <a href="/contact.html" class="Header-nav-item">CONTACT</a>
+        </ul>
+      </nav>
+    </div>
+
+    <nav>
+        <a href="/consultations.html" class="Header-nav-item">BOOK YOUR FREE CONSULTATION</a>
+        <a href="/contact.html" class="Header-nav-item">CONTACT</a>
+        <div class="header-logo-container">
+          <a href="index.html">
+            <img src="images/BOB logo.png" alt="Black Owned Barbell logo" class="logo">
+          </a>
+    </div>
     </nav>
   </header>
 
@@ -151,6 +167,22 @@
           </div>
         </div>
       </footer>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const hamburger = document.querySelector(".hamburger-menu");
+            const navLinks = document.querySelector(".nav-links");
+            const closeMenu = document.querySelector(".close-menu");
+    
+            hamburger.addEventListener("click", () => {
+                navLinks.classList.toggle("open");
+            });
+    
+            closeMenu.addEventListener("click", () => {
+                navLinks.classList.remove("open");
+            });
+        });
+      </script>
 </body>
 </html>
 
