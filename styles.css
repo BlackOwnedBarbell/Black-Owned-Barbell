@@ -169,7 +169,7 @@ header .logo {
     max-width: 800px; /* Match the paragraph width */
     margin: 0 auto; /* Center the list */
     padding-top: 20px;
-    padding-left: 100px; /* Add left padding for indentation */
+    padding-left: 10vw; /* Add left padding for indentation */
     text-align: left; /* Align text to the left */
 }
 

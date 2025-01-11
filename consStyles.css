@@ -1,6 +1,6 @@
 /* General Styles */
 :root {
-    --primary-color: #2e6b88;
+    --primary-color: #5a26ab;
     --secondary-color: #fee58e;
     --tertiary-light: #e3e4e4;
     --typography-high: rgba(23, 28, 33, 0.87);
@@ -70,10 +70,8 @@ h2 {
 }
 
 h3 {
-    font-size: 1.5rem;
-    font-weight: 1;
+    font-size: 2rem;
     padding-top: 1rem;
-    padding-bottom: 1rem;
 }
 
 h4 {
@@ -175,7 +173,7 @@ header .logo {
     max-width: 800px; /* Match the paragraph width */
     margin: 0 auto; /* Center the list */
     padding-top: 20px;
-    padding-left: 100px; /* Add left padding for indentation */
+    padding-left: 10vw; /* Add left padding for indentation */
     text-align: left; /* Align text to the left */
 }
 
@@ -226,38 +224,32 @@ header .logo {
     text-align: center; /* Center all content */
     padding: 2rem; /* Add space around the section */
     color: var(--text-color);
-    padding: 2rem;
     background-color: var(--light-bg);
-    color: var(--text-color);
 }
 
 .hours-container {
     background-color: var(--dark-bg);
     margin: 1rem auto;
     padding: 1.5rem;
-    max-width: 600px;
+    max-width: 400px;
     border-radius: var(--border-radius);
 }
 
 .hours h2 {
-    font-size: 2rem; /* Adjust title size */
+    font-size: 2.5rem; /* Adjust title size */
     margin-bottom: 1.5rem; /* Add space below the title */
 }
 
-.hours-content {
+.hours-content {;
     font-size: 1.2rem; /* Adjust font size for readability */
-    line-height: 2; /* Space out the lines evenly */
     max-width: 600px; /* Restrict width for better layout */
     margin: 0 auto; /* Center the content */
 }
 
-.hours-content p {
-    margin: 0.8rem 0; /* Add vertical spacing between lines */
-}
-
-.hours-content strong {
+.hours-content h3 {
     color: var(--primary-color); /* Highlight the day name */
-    font-weight: 500; /* Use a thinner font weight for elegance */
+    font-size: 1.8rem;;
+    font-weight: 600; /* Use a thinner font weight for elegance */
 }
 
 
