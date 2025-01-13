@@ -20,6 +20,7 @@ body {
     background-size: cover;
     background-position: 100% 25%; /* Adjust to focus on the second quadrant */
     background-attachment: fixed;
+    background-attachment: fixed;
     background-repeat: no-repeat;
     color: var(--text-color);
     line-height: 1.6;
