@@ -203,7 +203,7 @@ header .logo {
 
 .image-display2 {
     display: grid;
-    grid-template-columns: repeat(autofit, minimax(150px, 1fr)); /* Create exactly two columns */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust grid columns based on space */
     gap: 1rem; /* Spacing between images */
     margin: 2rem auto; /* Center the grid */
     padding: 1rem;
