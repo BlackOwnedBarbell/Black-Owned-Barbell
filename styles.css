@@ -20,6 +20,7 @@ body {
     background-size: cover;
     background-position: 100% 25%; /* Adjust to focus on the second quadrant */
     background-attachment: fixed;
+    background-attachment: fixed;
     background-repeat: no-repeat;
     color: var(--text-color);
     line-height: 1.6;
@@ -214,7 +215,7 @@ nav {
 
 .image-display2 {
     display: grid;
-    grid-template-columns: repeat(2, 400px); /* Create exactly two columns */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust grid columns based on space */
     gap: 1rem; /* Spacing between images */
     margin: 2rem auto; /* Center the grid */
     padding: 1rem;
@@ -225,8 +226,7 @@ nav {
     position: relative;
     overflow: hidden;
     border-radius: 0.5rem; /* Optional: Add rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
-    aspect-ratio: 1 / 1; /* Make the images square */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .image-wrapper2 img {
