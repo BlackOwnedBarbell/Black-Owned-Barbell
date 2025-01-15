@@ -20,6 +20,7 @@ body {
     background-size: cover;
     background-position: 100% 25%; /* Adjust to focus on the second quadrant */
     background-attachment: fixed;
+    background-attachment: fixed;
     background-repeat: no-repeat;
     color: var(--text-color);
     line-height: 1.6;
@@ -101,10 +102,18 @@ nav {
     justify-content: space-between;
     width: 100%;
     margin: 0 auto;
+    position: relative; /* Ensure it's above the overlay */
+}
+
+.header-logo-container {
+    position: absolute; /* Center the logo independently */
+    left: 50%; /* Horizontally center */
+    transform: translateX(-50%); /* Account for the logo's width */
+    z-index: 1000; /* Ensure it's above the overlay */
 }
 
 .Header-nav-item {
-    padding: 3.5rem;
+    padding: 0 1rem;
     text-decoration: none;
     color: #ffffff;
     transition: color 0.3s ease;
@@ -117,13 +126,17 @@ nav {
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 40); /* Adjusted for visibility */
 }
 
-.header-logo-container {
-    position: absolute; /* Center the logo independently */
-    left: 50%; /* Horizontally center */
-    transform: translateX(-50%); /* Account for the logo's width */
+.Header-nav-item:nth-child(2) { /* CONTACT */
+    margin-right: auto; /* Push the next links to the far right */
+    padding-right: 3rem; /* Add more space to the right */
 }
 
-header .logo {
+.Header-nav-item:nth-child(3) { /* HOURS */
+    margin-left: auto; /* Push it away from CONTACT */
+    padding-left: 3rem; /* Add more space to the left */
+}
+
+.logo {
     width: 20rem;
     height: auto;
 }
@@ -202,7 +215,7 @@ header .logo {
 
 .image-display2 {
     display: grid;
-    grid-template-columns: repeat(2, 400px); /* Create exactly two columns */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust grid columns based on space */
     gap: 1rem; /* Spacing between images */
     margin: 2rem auto; /* Center the grid */
     padding: 1rem;
@@ -213,8 +226,7 @@ header .logo {
     position: relative;
     overflow: hidden;
     border-radius: 0.5rem; /* Optional: Add rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
-    aspect-ratio: 1 / 1; /* Make the images square */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .image-wrapper2 img {
@@ -355,24 +367,24 @@ footer a:hover {
         justify-content: space-between; /* Space items between left and right */
         align-items: center; /* Vertically align items */
     }
-
+    
     nav {
         display: flex; /* Use flexbox for navigation layout */
         justify-content: flex-end; /* Align navigation items to the right */
         gap: 1rem; /* Add spacing between nav items */
     }
-
+    
     header .logo {
         width: 15rem; /* Scale down logo size for smaller screens */
         height: auto; /* Allow height to adjust */
     }
-
+    
     /* Adjust nav items */
     .Header-nav-item {
         font-size: 1rem; /* Adjust size for smaller screens */
         padding: 1.8rem; /* Reduce padding for nav items */
     }
-
+    
     .header-logo-container {
         position: relative; /* Remove absolute positioning */
         left: auto;
@@ -381,100 +393,106 @@ footer a:hover {
         margin-right: auto; /* Push logo to the left */
         order: -1;
     }
-}
-
-@media (max-width: 930px) {
-
-    header {
-        display: flex;
-        justify-content: space-between; /* Separate logo and hamburger menu */
-        align-items: center; /* Vertically align items */
-        padding: 1rem 2rem;
-        height: 7rem; /* Set consistent header height */
-    }
-
-    .header-logo-container {
-        flex: 0;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start; /* Align the logo to the left */
-        margin-right: auto; /* Push the logo to the left */
-    }
-
-    .hamburger-menu{
-        display: block; /* Ensure visibility */
-        font-size: 32px;
-        color: white;
-        background: none;
-        border: none;
-        margin-left: auto; /* Push hamburger menu to the far right */
-        position: relative;
-        z-index: 2; /* Ensure it's above content */
-    }
-
-    .hamburger-menu {
-        margin-left: auto; /* Push the hamburger menu to the far right */
-    }
-
-    .nav-links {
-        display: none; /* Hidden by default */
-        flex-direction: column; /* Stack links vertically */
-        align-items: center; /* Center horizontally */
-        justify-content: center; /* Center vertically */
-        background-color: rgba(0, 0, 0, 1); /* black background */
-        position: fixed; /* Cover the entire screen */
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        padding: 0;
-        z-index: 3; /* Ensure it's above everything */
-    }
-
-    .nav-links.open {
-        display: flex; /* Show the mobile menu */
     }
     
-    .close-menu {
-        display: block;
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        font-size: 2rem;
-        background: none;
-        border: none;
-        color: white;
-        cursor: pointer;
-        z-index: 1100; /* Ensure it's above the menu background */
-    }
+    @media (max-width: 1150px) {
     
-    .close-menu:hover {
-        color: var(--accent-color); /* Optional hover effect */
-    }
-
-    header nav { 
-        display: none; /* Hide the desktop nav */ 
-    }
-
-    .home-nav, .home-nav nav {
-        display: flex; /* Show mobile nav */
-        justify-content: space-between;
-        width: 100%;
-    }
-}
-
-
-@media (max-width: 768px) {
-        /* Adjust header */
         header {
-            padding: 1rem; /* Reduce padding for smaller screens */
-            flex-wrap: wrap; /* Allow items to wrap for better spacing */
-            justify-content: space-between;
+            display: flex;
+            justify-content: space-between; /* Separate logo and hamburger menu */
+            align-items: center; /* Vertically align items */
+            padding: 1rem 2rem;
+            height: 7rem; /* Set consistent header height */
         }
     
-        header .logo {
-            width: 15rem; /* Scale down logo size */
+        .header-logo-container {
+            flex: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; /* Align the logo to the left */
+            margin-right: auto; /* Push the logo to the left */
         }
+    
+        .hamburger-menu{
+            display: block; /* Ensure visibility */
+            font-size: 32px;
+            color: white;
+            background: none;
+            border: none;
+            margin-left: auto; /* Push hamburger menu to the far right */
+            position: relative;
+            z-index: 2; /* Ensure it's above content */
+        }
+    
+        .hamburger-menu {
+            margin-left: auto; /* Push the hamburger menu to the far right */
+        }
+    
+        .nav-links {
+            display: none; /* Hidden by default */
+            flex-direction: column; /* Stack links vertically */
+            align-items: center; /* Center horizontally */
+            justify-content: center; /* Center vertically */
+            background-color: rgba(0, 0, 0, 1); /* black background */
+            position: fixed; /* Cover the entire screen */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            z-index: 3; /* Ensure it's above everything */
+        }
+    
+        .nav-links.open {
+            display: flex; /* Show the mobile menu */
+        }
+        
+        .close-menu {
+            display: block;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            z-index: 1100; /* Ensure it's above the menu background */
+        }
+        
+        .close-menu:hover {
+            color: var(--accent-color); /* Optional hover effect */
+        }
+    
+        header nav { 
+            display: none; /* Hide the desktop nav */ 
+        }
+    
+        .home-nav, .home-nav nav {
+            display: flex; /* Show mobile nav */
+            justify-content: space-between;
+            width: 100%;
+        }
+    }
+    
+    
+    @media (max-width: 768px) {
+            /* Adjust header */
+            header {
+                padding: 1rem; /* Reduce padding for smaller screens */
+                flex-wrap: wrap; /* Allow items to wrap for better spacing */
+                justify-content: space-between;
+            }
+        
+            header .logo {
+                width: 15rem; /* Scale down logo size */
+            }
+        
+            /* Adjust nav items */
+            .Header-nav-item {
+                padding: 1rem; /* Reduce padding for nav items */
+                font-size: 0.9rem; /* Scale down text size */
+            }
     
         /* Adjust nav items */
         .Header-nav-item {

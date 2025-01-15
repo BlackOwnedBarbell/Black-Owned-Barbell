@@ -103,10 +103,18 @@ nav {
     justify-content: space-between;
     width: 100%;
     margin: 0 auto;
+    position: relative; /* Ensure it's above the overlay */
+}
+
+.header-logo-container {
+    position: absolute; /* Center the logo independently */
+    left: 50%; /* Horizontally center */
+    transform: translateX(-50%); /* Account for the logo's width */
+    z-index: 1000; /* Ensure it's above the overlay */
 }
 
 .Header-nav-item {
-    padding: 3.5rem;
+    padding: 0 1rem;
     text-decoration: none;
     color: #ffffff;
     transition: color 0.3s ease;
@@ -119,13 +127,17 @@ nav {
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 40); /* Adjusted for visibility */
 }
 
-.header-logo-container {
-    position: absolute; /* Center the logo independently */
-    left: 50%; /* Horizontally center */
-    transform: translateX(-50%); /* Account for the logo's width */
+.Header-nav-item:nth-child(2) { /* CONTACT */
+    margin-right: auto; /* Push the next links to the far right */
+    padding-right: 3rem; /* Add more space to the right */
 }
 
-header .logo {
+.Header-nav-item:nth-child(3) { /* HOURS */
+    margin-left: auto; /* Push it away from CONTACT */
+    padding-left: 3rem; /* Add more space to the left */
+}
+
+.logo {
     width: 20rem;
     height: auto;
 }
@@ -240,7 +252,7 @@ header .logo {
     margin-bottom: 1.5rem; /* Add space below the title */
 }
 
-.hours-content {;
+.hours-content {
     font-size: 1.2rem; /* Adjust font size for readability */
     max-width: 600px; /* Restrict width for better layout */
     margin: 0 auto; /* Center the content */
@@ -374,7 +386,7 @@ header .logo {
 }
 }
 
-@media (max-width: 930px) {
+@media (max-width: 1150px) {
 
     header {
         display: flex;
