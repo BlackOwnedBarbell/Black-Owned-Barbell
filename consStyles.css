@@ -353,40 +353,40 @@ footer a:hover {
 
 @media (max-width: 1300px) {
 /* Header adjustments */
-header {
-    flex-direction: row; /* Set header layout to row */
-    justify-content: space-between; /* Space items between left and right */
-    align-items: center; /* Vertically align items */
-}
+    header {
+        flex-direction: row; /* Set header layout to row */
+        justify-content: space-between; /* Space items between left and right */
+        align-items: center; /* Vertically align items */
+    }
 
-nav {
-    display: flex; /* Use flexbox for navigation layout */
-    justify-content: flex-end; /* Align navigation items to the right */
-    gap: 1rem; /* Add spacing between nav items */
-}
+    nav {
+        display: flex; /* Use flexbox for navigation layout */
+        justify-content: flex-end; /* Align navigation items to the right */
+        gap: 1rem; /* Add spacing between nav items */
+    }
 
-header .logo {
-    width: 15rem; /* Scale down logo size for smaller screens */
-    height: auto; /* Allow height to adjust */
-}
+    header .logo {
+        width: 15rem; /* Scale down logo size for smaller screens */
+        height: auto; /* Allow height to adjust */
+    }
 
-/* Adjust nav items */
-.Header-nav-item {
-    font-size: 1rem; /* Adjust size for smaller screens */
-    padding: 1.8rem; /* Reduce padding for nav items */
-}
+    /* Adjust nav items */
+    .Header-nav-item {
+        font-size: 1rem; /* Adjust size for smaller screens */
+        padding: 1.8rem; /* Reduce padding for nav items */
+    }
 
-.header-logo-container {
-    position: relative; /* Remove absolute positioning */
-    left: auto;
-    transform: none;
-    flex: 0; /* Prevent stretching */
-    margin-right: auto; /* Push logo to the left */
-    order: -1;
-}
-}
+    .header-logo-container {
+        position: relative; /* Remove absolute positioning */
+        left: auto;
+        transform: none;
+        flex: 0; /* Prevent stretching */
+        margin-right: auto; /* Push logo to the left */
+        order: -1;
+    }
+    }
 
-@media (max-width: 1150px) {
+@media (max-width: 1205px) {
 
     header {
         display: flex;
@@ -438,6 +438,30 @@ header .logo {
         display: flex; /* Show the mobile menu */
     }
     
+    .nav-links ul {
+        list-style-type: none; /* Remove bullet points */
+        margin: 0; /* Reset margin */
+        padding: 0; /* Reset padding */
+    }
+    
+    .nav-links ul li {
+        margin: 0.5rem 0; /* Add vertical spacing between items */
+    }
+
+    .Ham-nav-item {
+        text-decoration: none; /* Remove underline */
+        color: white; /* Set link color */
+        font-size: 1.7rem; /* Adjust size for readability */
+        padding: 1rem; /* Add padding */
+        display: block; /* Make links stack properly */
+        text-align: center; /* Center-align the text */
+        transition: color 0.3s ease; /* Smooth hover effect */
+    }
+    
+    .Ham-nav-item:hover {
+        color: var(--accent-color); /* Add hover effect for better UX */
+    }
+    
     .close-menu {
         display: block;
         position: absolute;
@@ -480,9 +504,15 @@ header .logo {
         }
     
         /* Adjust nav items */
-        .Header-nav-item {
-            padding: 1rem; /* Reduce padding for nav items */
-            font-size: 0.9rem; /* Scale down text size */
+        .nav-links ul {
+            list-style-type: none; /* Removes bullet points */
+            margin: 0; /* Removes default margin */
+            padding: 0; /* Removes default padding */
+        }
+        
+        .nav-links ul li {
+            text-align: center; /* Center-align the text */
+            margin: 0.5rem 0; /* Add vertical spacing between items */
         }
     
         /* About section */

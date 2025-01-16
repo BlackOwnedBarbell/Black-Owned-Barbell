@@ -26,27 +26,33 @@
         <div class="nav-links">
           <button class="close-menu" aria-label="Close navigation">✕</button>
           <ul>
-            <li><a href="/consultations.html" class="Header-nav-item">BOOK YOUR FREE CONSULTATION</a></li>
-            <li><a href="/contact.html" class="Header-nav-item">CONTACT</a></li>
+            <li><a href="/consultations.html" class="Ham-nav-item">BOOK YOUR FREE CONSULTATION</a></li>
+            <li><a href="/contact.html" class="Ham-nav-item">CONTACT</a></li>
+            <li><a href="#pricing" class="Ham-nav-item">PRICING</a></li>
+            <li><a href="#booking" class="Ham-nav-item">GET STARTED</a></li>
+            <li><a href="#hours" class="Ham-nav-item">HOURS</a></li>
           </ul>
         </div>
       </nav>
     </div>
 
     <nav>
-        <a href="/Black-Owned-Barbell/consultations.html" class="Header-nav-item">BOOK YOUR FREE CONSULTATION</a>
-        <a href="/Black-Owned-Barbell/contact.html" class="Header-nav-item">CONTACT</a>
+        <a href="/consultations.html" class="Header-nav-item">BOOK YOUR FREE CONSULTATION</a>
+        <a href="/contact.html" class="Header-nav-item">CONTACT</a>
         <div class="header-logo-container">
           <a href="index.html">
             <img src="images/BOBlogo.png" alt="Black Owned Barbell logo" class="logo">
           </a>
         </div>
+        <a href="#pricing" class="Header-nav-item">PRICING</a>
+        <a href="#booking" class="Header-nav-item">GET STARTED</a>
+        <a href="#hours" class="Header-nav-item">HOURS</a>
     </nav>
   </header>
 
 
 
-    <section class="about" id="about">
+    <section class="about">
         <h3>Let me prove to you that I am the right coach for your goals.</h3>
         <div class="image-display">
           <div class="image-wrapper">
@@ -56,7 +62,7 @@
               <img src="images/SpotSquat.gif" alt="Korey adjusting a training belt">
           </div>
       </div>
-        <hr>
+        <hr id="pricing">
         <h4>Together, we’ll build a fitness plan that empowers you to achieve your best self</h4>
           <p>
             Whether you prefer strength training, muscle building, conditioning, or 
@@ -117,7 +123,7 @@
     <div class="footer-container">
       <div class="footer-left">
         <a href="mailto:info@blackownedbarbell.com">	✉ Business Inquiries</a>
-        <p><a href="/Black-Owned-Barbell/privacy.html">Privacy Policy</a></p>
+        <p><a href="/privacy.html">Privacy Policy</a></p>
       </div>
       <div class="footer-center">
         <a href="https://www.instagram.com/blackownedbarbell/">
@@ -128,7 +134,7 @@
         </a>
       </div>
       <div class="footer-right">
-        <a href="/Black-Owned-Barbell/terms.html">Terms and Conditions</a>
+        <a href="/terms.html">Terms and Conditions</a>
         <p>© Copyright Black Owned Barbell, LLC 2025</p>
       </div>
     </div>
@@ -139,6 +145,7 @@
         const hamburger = document.querySelector(".hamburger-menu");
         const navLinks = document.querySelector(".nav-links");
         const closeMenu = document.querySelector(".close-menu");
+        const hamNavLinks = document.querySelectorAll(".Ham-nav-item");
 
         hamburger.addEventListener("click", () => {
             navLinks.classList.toggle("open");
@@ -147,6 +154,12 @@
         closeMenu.addEventListener("click", () => {
             navLinks.classList.remove("open");
         });
+
+        hamNavLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        });
+      });
     });
   </script>
 </body>

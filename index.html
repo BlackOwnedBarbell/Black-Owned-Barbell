@@ -26,21 +26,25 @@
         <div class="nav-links">
           <button class="close-menu" aria-label="Close navigation">✕</button>
           <ul>
-            <li><a href="/consultations.html" class="Header-nav-item">BOOK YOUR FREE CONSULTATION</a></li>
-            <li><a href="/contact.html" class="Header-nav-item">CONTACT</a></li>
+            <li><a href="/consultations.html" class="Ham-nav-item">BOOK YOUR FREE CONSULTATION</a></li>
+            <li><a href="/contact.html" class="Ham-nav-item">CONTACT</a></li>
+            <li><a href="#korey" class="Ham-nav-item">MEET THE TRAINER</a></li>
+            <li><a href="#testimonials" class="Ham-nav-item">TESTIMONIALS</a></li>
           </ul>
         </div>
       </nav>
     </div>
 
     <nav>
-        <a href="/Black-Owned-Barbell/consultations.html" class="Header-nav-item">BOOK YOUR FREE CONSULTATION</a>
-        <a href="/Black-Owned-Barbell/contact.html" class="Header-nav-item">CONTACT</a>
+        <a href="/consultations.html" class="Header-nav-item">BOOK YOUR FREE CONSULTATION</a>
+        <a href="/contact.html" class="Header-nav-item">CONTACT</a>
         <div class="header-logo-container">
           <a href="index.html">
             <img src="images/BOBlogo.png" alt="Black Owned Barbell logo" class="logo">
           </a>
         </div>
+        <a href="#korey" class="Header-nav-item">MEET THE TRAINER</a>
+        <a href="#testimonials" class="Header-nav-item">TESTIMONIALS</a>
     </nav>
   </header>
     
@@ -83,7 +87,7 @@
                 </div>
                     <hr>
             
-                <h2>Meet The Trainer – Korey Miree </h2>
+                <h2 id="korey">Meet The Trainer – Korey Miree </h2>
     
         <div class="korey">
           <img class="korey_img" src="images/Korey.jpg" alt="Korey Miree">
@@ -106,21 +110,21 @@
       </section>
     
     
-    <section class="testimonials">
+    <section id="testimonials" class="testimonials">
         <h2>Client Testimonials</h2>
         <div class="testimonial">
-            <p>"It was a fun event. Yes shout out to Korey for all the coaching. 
-              We would have not hit all the PRs without his help!"</p> - John H.
+          <p>"It was a fun event. Yes shout out to Korey for all the coaching. 
+            We would have not hit all the PRs without his help!"</p> - John H.
         </div>
         <div class="testimonial">
-            <p>"Twelve weeks ago I decided to join my sister and dad in a powerlifting meet. 
-              I hadn’t been actively training but decided I couldn’t miss the opportunity to compete 
-              alongside my family. I feel grateful for all the support, and for coach Korey for getting 
-              me on a program which lead to me hitting lifetime PRs by 20-40lbs in all three lifts in 
-              only three short months."</p> - Jake H.
+          <p>"Twelve weeks ago I decided to join my sister and dad in a powerlifting meet. 
+            I hadn’t been actively training but decided I couldn’t miss the opportunity to compete 
+            alongside my family. I feel grateful for all the support, and for coach Korey for getting 
+            me on a program which lead to me hitting lifetime PRs by 20-40lbs in all three lifts in 
+            only three short months."</p> - Jake H.
         </div>
         <div class="testimonial">
-          <p>Korey is an exceptional personal trainer who has helped me achieve 
+          <p>"Korey is an exceptional personal trainer who has helped me achieve 
             my fitness goals. His expertise, patience, and motivation have been 
             invaluable to me. I've seen significant improvements in my strength, 
             endurance, and overall well-being since working with him.</p>
@@ -129,6 +133,22 @@
             knowledgeable personal trainer who truly cares about his clients' 
             success."</p> - Michelle H.
       </div>
+      <div class="testimonial">
+        <p>"Since starting strength training with Korey, I no longer have any pain or mobility 
+          issues and I never think about visiting the chiropractor anymore. Korey does well 
+          in setting realistic goals and having tough standards for myself. I greatly 
+          appreciate his mindfulness of when I express pain or physical issues during the 
+          exercise. He always suggests alternate techniques or exercises to help mitigate 
+          uncomfortableness while still maintaining a challenge so that growth and results 
+          are achieved.</p>
+
+          <p>Korey has a wide range of knowledge from basic exercise and nutrition to 
+            more in-depth biology, myology, and kinesiology; Always providing me with 
+            succinct answers to all my questions large and small.</p>
+            
+          <p>Whether you are considering a trainer to prepare for competition or just 
+            want to be healthier, I highly recommend his services." </p> - - Daniel D.
+    </div>
     </section>
     
         <section class="booking">
@@ -171,6 +191,7 @@
             const hamburger = document.querySelector(".hamburger-menu");
             const navLinks = document.querySelector(".nav-links");
             const closeMenu = document.querySelector(".close-menu");
+            const hamNavLinks = document.querySelectorAll(".Ham-nav-item");
     
             hamburger.addEventListener("click", () => {
                 navLinks.classList.toggle("open");
@@ -179,6 +200,12 @@
             closeMenu.addEventListener("click", () => {
                 navLinks.classList.remove("open");
             });
+
+            hamNavLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            navLinks.classList.remove("open");
+            });
+          });
         });
       </script>
       

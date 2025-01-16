@@ -346,8 +346,8 @@ footer a:hover {
     }
     }
     
-    @media (max-width: 1150px) {
-    
+    @media (max-width: 1205px) {
+
         header {
             display: flex;
             justify-content: space-between; /* Separate logo and hamburger menu */
@@ -396,6 +396,30 @@ footer a:hover {
     
         .nav-links.open {
             display: flex; /* Show the mobile menu */
+        }
+        
+        .nav-links ul {
+            list-style-type: none; /* Remove bullet points */
+            margin: 0; /* Reset margin */
+            padding: 0; /* Reset padding */
+        }
+        
+        .nav-links ul li {
+            margin: 0.5rem 0; /* Add vertical spacing between items */
+        }
+    
+        .Ham-nav-item {
+            text-decoration: none; /* Remove underline */
+            color: white; /* Set link color */
+            font-size: 1.7rem; /* Adjust size for readability */
+            padding: 1rem; /* Add padding */
+            display: block; /* Make links stack properly */
+            text-align: center; /* Center-align the text */
+            transition: color 0.3s ease; /* Smooth hover effect */
+        }
+        
+        .Ham-nav-item:hover {
+            color: var(--accent-color); /* Add hover effect for better UX */
         }
         
         .close-menu {
