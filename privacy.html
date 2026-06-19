@@ -173,13 +173,20 @@
             const hamburger = document.querySelector(".hamburger-menu");
             const navLinks = document.querySelector(".nav-links");
             const closeMenu = document.querySelector(".close-menu");
-    
+            const hamNavLinks = document.querySelectorAll(".Ham-nav-item");
+
             hamburger.addEventListener("click", () => {
                 navLinks.classList.toggle("open");
             });
-    
+
             closeMenu.addEventListener("click", () => {
                 navLinks.classList.remove("open");
+            });
+
+            hamNavLinks.forEach(link => {
+                link.addEventListener("click", () => {
+                    navLinks.classList.remove("open");
+                });
             });
         });
       </script>
