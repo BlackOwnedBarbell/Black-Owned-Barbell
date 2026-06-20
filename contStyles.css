@@ -89,62 +89,70 @@ p {
 /* Header */
 header {
     display: flex;
-    justify-content: space-between; /* Space out logo and menu */
     align-items: center;
-    padding: 1rem 2rem;
-    height: 7rem; /* Consistent height */
-    background: radial-gradient(circle, var(--light-bg) 40%, var(--dark-bg) 100%);
+    padding: 0.75rem 2rem;
+    height: 6.5rem;
+    background: linear-gradient(180deg, #1a1a1a 0%, #111 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
     position: relative;
     z-index: 1000;
 }
 
-nav {
+.desktop-header-nav {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.nav-group {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    margin: 0 auto;
-    position: relative; /* Ensure it's above the overlay */
+    gap: 0.25rem;
+}
+
+.nav-left {
+    justify-content: flex-end;
+    padding-right: 1.5rem;
+}
+
+.nav-right {
+    justify-content: flex-start;
+    padding-left: 1.5rem;
 }
 
 .header-logo-container {
-    position: absolute; /* Center the logo independently */
-    left: 50%; /* Horizontally center */
-    transform: translateX(-50%); /* Account for the logo's width */
-    z-index: 1000; /* Ensure it's above the overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .Header-nav-item {
-    padding: 0 1rem;
+    padding: 0.3rem 0.8rem;
     text-decoration: none;
-    color: #ffffff;
-    transition: color 0.3s ease;
-    font-size: 1rem; /* Ensure consistent size */
-    white-space: nowrap; /* Prevent text wrapping */
+    color: rgba(255, 255, 255, 0.88);
+    transition: color 0.2s ease;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
 }
 
 .Header-nav-item:hover {
-    color: #663da7;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 40); /* Adjusted for visibility */
-}
-
-.Header-nav-item:nth-child(2) { /* CONTACT */
-    margin-right: auto; /* Push the next links to the far right */
-    padding-right: 3rem; /* Add more space to the right */
-}
-
-.Header-nav-item:nth-child(3) { /* HOURS */
-    margin-left: auto; /* Push it away from CONTACT */
-    padding-left: 3rem; /* Add more space to the left */
+    color: #a78bfa;
 }
 
 .logo {
-    width: 20rem;
+    width: 16rem;
     height: auto;
 }
 
 .hamburger-menu {
-    display: none; /* Default hidden */
+    display: none;
     font-size: 2rem;
     color: white;
     background: none;
@@ -152,7 +160,6 @@ nav {
     cursor: pointer;
     z-index: 1100;
     position: relative;
-    margin-left: auto; /* Push to the right */
 }
 
 /* Banner Section */
@@ -228,25 +235,33 @@ nav {
 
 /* Booking Section */
 .booking {
-    padding: 2rem;
+    padding: 2.5rem 2rem;
     text-align: center;
-    background-color: var(--light-bg);
+    background-color: #111;
+}
+
+.booking h2,
+.booking h3 {
+    color: #ffffff;
 }
 
 .booking p {
     max-width: 800px;
     margin: 0 auto;
     text-align: left;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .booking iframe {
     width: 90%;
-    max-width: 800px;
-    height: 600px;
-    margin-top: 1rem;
-    border: none;
+    max-width: 860px;
+    height: 620px;
+    margin-top: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: var(--border-radius);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+    background-color: #ffffff;
+    filter: contrast(1.08) saturate(1.12);
 }
 
 /* Google Map Section */
@@ -312,39 +327,23 @@ footer a:hover {
 /* Responsive Design */
 
 @media (max-width: 1300px) {
-    /* Header adjustments */
-    header {
-        flex-direction: row; /* Set header layout to row */
-        justify-content: space-between; /* Space items between left and right */
-        align-items: center; /* Vertically align items */
-    }
-    
-    nav {
-        display: flex; /* Use flexbox for navigation layout */
-        justify-content: flex-end; /* Align navigation items to the right */
-        gap: 1rem; /* Add spacing between nav items */
-    }
-    
     header .logo {
-        width: 15rem; /* Scale down logo size for smaller screens */
-        height: auto; /* Allow height to adjust */
+        width: 15rem;
     }
-    
-    /* Adjust nav items */
+
     .Header-nav-item {
-        font-size: 1rem; /* Adjust size for smaller screens */
-        padding: 1.8rem; /* Reduce padding for nav items */
+        font-size: 0.85rem;
+        padding: 0.25rem 0.5rem;
     }
-    
-    .header-logo-container {
-        position: relative; /* Remove absolute positioning */
-        left: auto;
-        transform: none;
-        flex: 0; /* Prevent stretching */
-        margin-right: auto; /* Push logo to the left */
-        order: -1;
+
+    .nav-left {
+        padding-right: 1rem;
     }
+
+    .nav-right {
+        padding-left: 1rem;
     }
+}
     
     @media (max-width: 1205px) {
 
@@ -356,14 +355,6 @@ footer a:hover {
             height: 7rem; /* Set consistent header height */
         }
     
-        .header-logo-container {
-            flex: 0;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start; /* Align the logo to the left */
-            margin-right: auto; /* Push the logo to the left */
-        }
-    
         .hamburger-menu{
             display: block; /* Ensure visibility */
             font-size: 32px;
@@ -373,10 +364,6 @@ footer a:hover {
             margin-left: auto; /* Push hamburger menu to the far right */
             position: relative;
             z-index: 2; /* Ensure it's above content */
-        }
-    
-        .hamburger-menu {
-            margin-left: auto; /* Push the hamburger menu to the far right */
         }
     
         .nav-links {
@@ -439,8 +426,8 @@ footer a:hover {
             color: var(--accent-color); /* Optional hover effect */
         }
     
-        header nav { 
-            display: none; /* Hide the desktop nav */ 
+        .desktop-header-nav {
+            display: none;
         }
     
         .home-nav, .home-nav nav {
